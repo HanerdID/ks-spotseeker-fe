@@ -1,23 +1,24 @@
 import React from "react";
+import appLogo from "../../assets/images/app-logo.png";
 
 const LoginPage = () => {
   return (
     <div>
       <div className="flex w-dvh h-dvh justify-center items-center">
-        <div className="flex w-auto bg-base-100 shadow-2xl rounded-2xl divide-x-4">
-          <div className="container p-4">
+        <div className="flex w-auto bg-base-100 shadow-2xl rounded-2xl divide-x-8">
+          <div className="container">
             <figure>
               <img
-                src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-                alt="Shoes"
-                className="h-auto"
+                src={appLogo}
+                alt="App logo"
+                className="w-[800px]"
               />
             </figure>
           </div>
-          <div className="card-body rounded-r-2xl text-center">
-            <h2 className="card-title">Login</h2>
-            <div className="container bg-red-300">
-              <div className="form-control">
+          <div className="card-body justify-center bg-red-300 gap-y-6 px-16">
+            <h2 className="card-title justify-center">Login</h2>
+            <div className="container">
+              <form className="form-control gap-y-4">
                 <label className="input input-bordered flex items-center gap-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -27,7 +28,12 @@ const LoginPage = () => {
                   >
                     <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" />
                   </svg>
-                  <input type="text" className="grow" placeholder="Username" />
+                  <input
+                    type="text"
+                    className="grow form-control"
+                    placeholder="Username"
+                    required
+                  />
                 </label>
                 <label className="input input-bordered flex items-center gap-2">
                   <svg
@@ -42,12 +48,24 @@ const LoginPage = () => {
                       clipRule="evenodd"
                     />
                   </svg>
-                  <input type="password" className="grow" value="password" />
+                  <input
+                    type="password"
+                    className="grow form-control"
+                    placeholder="********"
+                    min={12}
+                    required
+                  />
                 </label>
-              </div>
+              </form>
             </div>
             <div className="card-actions justify-end">
-              <button className="btn btn-primary">Buy Now</button>
+              <a
+                href="/dashboard"
+                className="btn btn-primary hover:scale-110"
+                rel="noopener noreferrer"
+              >
+                Login
+              </a>
             </div>
           </div>
         </div>
