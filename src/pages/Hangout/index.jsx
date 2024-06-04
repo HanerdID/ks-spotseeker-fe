@@ -5,9 +5,12 @@ import appBanner from "../../assets/images/app-banner.png";
 import Carousel from "../../components/Carousel";
 import Footer from "../../components/Footer";
 import Review from "../../components/Review";
+import Hero from "../../components/Hero";
 
 const Hangout = () => {
   const [open, setOpen] = useState(false);
+  const heroImage = appBanner;
+  const heroText = "Hangout";
   const review = "abc";
   const handleClick = () => {
     if (open) setOpen(false);
@@ -16,11 +19,7 @@ const Hangout = () => {
   return (
     <div>
       <Navbar />
-      <img
-        src={appBanner}
-        alt="App Banner"
-        className="object-cover h-96 w-full border-2 border-black"
-      />
+      <Hero heroText={heroText} image={heroImage}/>
       <div className="flex justify-center items-center w-full h-20 bg-red-300 my-4">
         <p className="font-semibold">
           Temukan Tempat Wisata Terbaik di Kabupaten Semarang!
