@@ -4,6 +4,8 @@ import "./assets/styles/App.css";
 import LoginPage from "./pages/LoginPage";
 import Dashboard from "./pages/Dashboard";
 import Destinasi from "./pages/Destinasi";
+import Hangout from "./pages/Hangout";
+import Kuliner from "./pages/Kuliner";
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
           <Route path="/" element={<LoginPage />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/destinasi" element={<Destinasi />} />
+          <Route path="/hangout" element={<Hangout />} />
+          <Route path="/kuliner" element={<Kuliner />} />
         </Routes>
       </div>
     </Router>

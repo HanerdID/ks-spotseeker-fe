@@ -1,5 +1,5 @@
 import React from "react";
-import appLogo from "../../assets/images/app-logo.png";
+import appBanner from "../../assets/images/app-banner.png";
 
 const LoginPage = () => {
   return (
@@ -9,7 +9,7 @@ const LoginPage = () => {
           <div className="container">
             <figure>
               <img
-                src={appLogo}
+                src={appBanner}
                 alt="App logo"
                 className="w-[800px]"
               />
