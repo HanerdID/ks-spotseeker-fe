@@ -6,6 +6,7 @@ import Carousel from "../../components/Carousel";
 import Footer from "../../components/Footer";
 import Review from "../../components/Review";
 import Hero from "../../components/Hero";
+import MobileMenu from "../../components/MobileMenu";
 
 const Hangout = () => {
   const [open, setOpen] = useState(false);
@@ -20,7 +21,7 @@ const Hangout = () => {
     <div>
       <Navbar />
       <Hero heroText={heroText} image={heroImage}/>
-      <div className="flex justify-center items-center w-full h-20 bg-red-300 my-4">
+      <div className="flex justify-center items-center text-center w-full h-20 bg-red-300 my-4">
         <p className="font-semibold">
           Temukan Tempat Wisata Terbaik di Kabupaten Semarang!
         </p>
@@ -37,6 +38,7 @@ const Hangout = () => {
         </div>
       )}
       <Footer />
+      <MobileMenu/>
     </div>
   );
 };
