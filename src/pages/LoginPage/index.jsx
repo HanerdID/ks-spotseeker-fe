@@ -4,20 +4,16 @@ import appBanner from "../../assets/images/app-banner.png";
 const LoginPage = () => {
   return (
     <div>
-      <div className="flex w-dvh h-dvh justify-center items-center">
-        <div className="flex w-auto bg-base-100 shadow-2xl rounded-2xl divide-x-8">
-          <div className="container">
-            <figure>
-              <img
-                src={appBanner}
-                alt="App logo"
-                className="w-[800px]"
-              />
+      <div className="flex w-dvw h-dvh justify-center items-center">
+        <div className="flex flex-col md:flex-row w-full max-w-4xl shadow-2xl rounded-2xl overflow-hidden">
+          <div className="flex justify-center items-center">
+            <figure className="w-full h-full">
+              <img src={appBanner} alt="App logo" className="w-full h-full" />
             </figure>
           </div>
-          <div className="card-body justify-center bg-red-300 gap-y-6 px-16">
-            <h2 className="card-title justify-center">Login</h2>
-            <div className="container">
+          <div className="flex flex-col justify-center bg-red-300 p-8 md:p-16 gap-y-6">
+            <h2 className="text-center text-2xl font-semibold">Login</h2>
+            <div className="w-full">
               <form className="form-control gap-y-4">
                 <label className="input input-bordered flex items-center gap-2">
                   <svg
@@ -58,7 +54,7 @@ const LoginPage = () => {
                 </label>
               </form>
             </div>
-            <div className="card-actions justify-end">
+            <div className="flex justify-end">
               <a
                 href="/dashboard"
                 className="btn btn-primary hover:scale-110"
