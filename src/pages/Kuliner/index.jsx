@@ -1,6 +1,6 @@
 import { React, useState } from "react";
 import Navbar from "../../components/Navbar";
-import appBanner from "../../assets/images/app-banner.png";
+import appBanner from "../../assets/images/app-banner-kuliner.png";
 import Carousel from "../../components/Carousel";
 import Footer from "../../components/Footer";
 import Review from "../../components/Review";
@@ -9,23 +9,22 @@ import MobileMenu from "../../components/MobileMenu";
 
 const Kuliner = () => {
   const [open, setOpen] = useState(false);
-  const heroImage = appBanner;
-  const heroText = "Kuliner";
   const review = "abc";
   const handleClick = () => {
     if (open) setOpen(false);
     else setOpen(true);
   };
+  
   return (
     <div>
       <Navbar />
-      <Hero heroText={heroText} image={heroImage} />
+      <Hero heroText="Kuliner" image={appBanner} />
       <div className="flex justify-center items-center text-center w-full h-20 bg-red-300 my-4">
         <p className="font-semibold">
           Temukan Tempat Kuliner Terbaik di Kabupaten Semarang!
         </p>
       </div>
-      <Carousel click={handleClick} />
+      <Carousel click={handleClick} className="my-2"/>
       {open && (
         <div className="flex flex-col w-full h-auto bg-green-300 px-12 py-8 my-4">
           <div className="container">Deskripsi</div>

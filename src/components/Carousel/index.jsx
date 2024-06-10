@@ -3,8 +3,8 @@ import React from 'react'
 
 const Carousel = (props) => {
   return (
-    <div>
-      <div className="carousel carousel-center rounded-box mx-8">
+    <div className={props.className}>
+      <div className="carousel carousel-center rounded-box mx-8 border-4 border-black">
         <div className="transition ease-in-out delay-50 carousel-item hover:scale-105 hover:cursor-pointer duration-300">
           <button onClick={props.click}>
             <img

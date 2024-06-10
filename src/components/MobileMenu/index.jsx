@@ -6,7 +6,7 @@ const MobileMenu = () => {
       <div className="lg:hidden">
         <ul className="menu menu-horizontal bg-[#EDE0D1] rounded-box bottom-0 fixed z-[10] w-full justify-around items-center border-t-2 border-black">
           <li>
-            <a href="/dashboard" className="flex btn" rel="noreferrer noopener">
+            <a href="/home" className="flex btn" rel="noreferrer noopener">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"

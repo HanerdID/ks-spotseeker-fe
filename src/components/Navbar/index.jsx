@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react'
-import appLogo from '../../assets/images/app-logo.png'
+import React from "react";
+import appLogo from "../../assets/images/banner.svg";
 
 const Navbar = () => {
   return (
@@ -12,7 +12,7 @@ const Navbar = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 font-semibold">
             <li>
-              <a href="/dashboard" rel="noreferrer noopener">
+              <a href="/home" rel="noreferrer noopener">
                 Home
               </a>
             </li>
@@ -38,9 +38,9 @@ const Navbar = () => {
             <div
               tabIndex={0}
               role="button"
-              className="btn btn-ghost btn-circle avatar bg-red-400"
+              className="btn btn-ghost btn-circle avatar bg-black"
             >
-              <div className="w-10 rounded-full bg-red-500">
+              <div className="w-10 rounded-full bg-white">
                 <img alt="App Logo" src={appLogo} />
               </div>
             </div>
@@ -59,6 +59,6 @@ const Navbar = () => {
       </div>
     </div>
   );
-}
+};
 
-export default Navbar
+export default Navbar;

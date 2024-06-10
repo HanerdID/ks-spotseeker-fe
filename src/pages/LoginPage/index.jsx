@@ -56,7 +56,7 @@ const LoginPage = () => {
             </div>
             <div className="flex justify-end">
               <a
-                href="/dashboard"
+                href="/home"
                 className="btn btn-primary hover:scale-110"
                 rel="noopener noreferrer"
               >
