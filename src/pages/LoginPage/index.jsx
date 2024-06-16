@@ -11,7 +11,7 @@ const LoginPage = () => {
     e.preventDefault();
     try {
       await login(username, password);
-      window.location.href = "/"; // Redirect ke halaman utama setelah login sukses
+      window.location.href = "/home"; // Redirect ke halaman utama setelah login sukses
     } catch (error) {
       setError("Login failed");
     }
