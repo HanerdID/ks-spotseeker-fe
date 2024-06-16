@@ -1,7 +1,23 @@
-import React from "react";
+import React, {useState} from "react";
 import appBanner from "../../assets/images/app-banner.png";
+import { login } from "../../api/auth";
 
 const LoginPage = () => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      await login(username, password);
+      window.location.href = "/"; // Redirect ke halaman utama setelah login sukses
+    } catch (error) {
+      setError("Login failed");
+    }
+  };
+
+
   return (
     <div>
       <div className="flex w-dvw h-dvh justify-center items-center">
@@ -14,7 +30,7 @@ const LoginPage = () => {
           <div className="flex flex-col justify-center bg-red-300 p-8 md:p-16 gap-y-6">
             <h2 className="text-center text-2xl font-semibold">Login</h2>
             <div className="w-full">
-              <form className="form-control gap-y-4">
+              <form className="form-control gap-y-4" onSubmit={handleLogin}>
                 <label className="input input-bordered flex items-center gap-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -28,7 +44,9 @@ const LoginPage = () => {
                     type="text"
                     className="grow form-control"
                     placeholder="Username"
+                    value={username}
                     required
+                    onChange={(e) => setUsername(e.target.value)}
                   />
                 </label>
                 <label className="input input-bordered flex items-center gap-2">
@@ -48,20 +66,17 @@ const LoginPage = () => {
                     type="password"
                     className="grow form-control"
                     placeholder="********"
+                    value={password}
                     min={12}
                     required
+                    onChange={(e) => setPassword(e.target.value)}
                   />
                 </label>
               </form>
             </div>
             <div className="flex justify-end">
-              <a
-                href="/home"
-                className="btn btn-primary hover:scale-110"
-                rel="noopener noreferrer"
-              >
-                Login
-              </a>
+              {error && <p>{error}</p>}
+              <button className="btn btn-primary" type="submit">Login</button>
             </div>
           </div>
         </div>
