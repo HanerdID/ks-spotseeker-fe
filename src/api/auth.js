@@ -4,18 +4,18 @@ import axiosInstance from "./axiosConfig";
 export const login = async (username, password) => {
   try {
     const response = await axiosInstance.post("/login", { username, password });
-    const { token } = response.data;
+    const { token, user } = response.data;
     localStorage.setItem("token", token);
-    return response.data;
+    return user; // Mengembalikan data user termasuk role
   } catch (error) {
     throw error;
   }
 };
 
 // src/api/auth.js
-export const register = async (username, password, name) => {
+export const register = async (name, username, password) => {
   try {
-    const response = await axiosInstance.post('/register', { username, password, name });
+    const response = await axiosInstance.post('/register', { name, username, password });
     return response.data;
   } catch (error) {
     throw error;

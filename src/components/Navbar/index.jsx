@@ -1,8 +1,20 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import appLogo from "../../assets/images/banner.svg";
+import Spotseeker from "../../assets/images/KS-Spotseeker_logo.png";
+import { useNavigate } from "react-router-dom";
+import { logout } from "../../api/auth";
 
 const Navbar = () => {
+  const navigate = useNavigate();
+  const handleLogout = async () => {
+    try {
+      await logout();
+      navigate("/login");
+    } catch (error) {
+      console.error("Logout failed", error);
+    }
+  };
   return (
     <div>
       <div className="navbar bg-[#EDE0D1]">
@@ -41,17 +53,17 @@ const Navbar = () => {
               className="btn btn-ghost btn-circle avatar bg-black"
             >
               <div className="w-10 rounded-full bg-white">
-                <img alt="App Logo" src={appLogo} />
+                <img alt="App Logo" src={Spotseeker} />
               </div>
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu menu-sm dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-auto"
             >
               <li>
-                <a href="/" rel="noopener noreferrer">
+                <button className="btn btn-error px-12" onClick={handleLogout}>
                   Logout
-                </a>
+                </button>
               </li>
             </ul>
           </div>

@@ -1,51 +1,47 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import appBanner from "../../assets/images/app-banner.png";
-import { login } from "../../api/auth";
+import { register } from "../../api/auth";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import homeBanner from "../../assets/images/app-banner-home.png";
+import nameImage from "../../assets/images/name.png";
 import usernameImage from "../../assets/images/username.png";
 import passwordImage from "../../assets/images/password.png";
-import Spotseeker from "../../assets/images/KS-Spotseeker_logo.png";
+import homeBanner from "../../assets/images/app-banner-home.png";
 
-const LoginPage = () => {
+const RegisterPage = () => {
+  const [name, setName] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
 
   const navigate = useNavigate();
 
-  const handleLogin = async (e) => {
+  const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const user = await login(username, password);
-      if (user.role === "ADMIN") {
-        navigate("/adminHome");
-      } else {
-        navigate("/home");
-      }
+      await register(name, username, password);
+      Swal.fire({
+        icon: "success",
+        title: "Registration Successful",
+        text: "You have successfully registered!",
+      }).then(() => {
+        navigate("/login");
+      });
     } catch (error) {
-      console.log("Gagal Login");
-      setError("Login failed");
-    }
-  };
-  useEffect(() => {
-    if (error) {
+      console.log("Gagal Register");
       Swal.fire({
         icon: "error",
-        title: "Login Failed",
-        text: "Username or password is incorrect",
+        title: "Registration Failed",
+        text: "There was an error during registration. Please try again.",
       });
-      setError("");
     }
-  }, [error]);
+  };
 
   return (
     <div>
       <img
         src={homeBanner}
         alt="Login Page Background"
-        className="fixed -z-20 w-full h-full"
+        className="fixed -z-20"
       />
       <div className="flex w-dvw h-dvh opacity-50 bg-black fixed -z-10" />
       <div className="flex w-dvw h-dvh justify-center items-center">
@@ -62,7 +58,18 @@ const LoginPage = () => {
           <div className="flex flex-col justify-center bg-red-300 p-8 md:p-16 gap-y-6">
             <h2 className="text-center text-2xl font-semibold">Login</h2>
             <div className="w-full">
-              <form className="form-control gap-y-4" onSubmit={handleLogin}>
+              <form className="form-control gap-y-4" onSubmit={handleRegister}>
+                <label className="input input-bordered flex items-center gap-2">
+                  <img src={nameImage} alt="name icon" className="w-4" />
+                  <input
+                    type="text"
+                    className="grow form-control"
+                    placeholder="Name"
+                    value={name}
+                    required
+                    onChange={(e) => setName(e.target.value)}
+                  />
+                </label>
                 <label className="input input-bordered flex items-center gap-2">
                   <img
                     src={usernameImage}
@@ -93,25 +100,39 @@ const LoginPage = () => {
                     onChange={(e) => setPassword(e.target.value)}
                   />
                 </label>
-                <div className="flex flex-col w-full">
-                  <div className="divider divider-neutral"></div>
-                </div>
                 <div className="flex w-full justify-center items-center">
                   <button
                     className="btn bg-[#EDE0D1] hover:bg-[#CCBAA7] w-full"
                     type="submit"
                   >
-                    Login
+                    Register
                   </button>
                 </div>
-              </form>
-                <button className="mt-4 w-full cursor-pointer font-semibold overflow-hidden relative z-20 border border-[#EDE0D1] group px-8 py-2 bg-white rounded-lg" onClick={() => navigate("/register")}>
-                  <span className="relative z-10 text-black group-hover:text-white text-sm duration-500">
-                    Register
-                  </span>
-                  <span className="absolute w-full h-full bg-[#EDE0D1] -left-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:left-0 duration-500"></span>
-                  <span className="absolute w-full h-full bg-[#EDE0D1] -right-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:right-0 duration-500"></span>
+                <button
+                  type="button"
+                  className="bg-white text-center w-full rounded-2xl h-12 relative font-sans text-black font-semibold group cursor-pointer"
+                  onClick={() => navigate("/login")}
+                >
+                  <div className="bg-[#EDE0D1] cursor-pointer rounded-xl h-10 w-1/4 flex items-center justify-center absolute ml-2 top-[4px] group-hover:w-11/12 z-10 duration-500">
+                    <svg
+                      width="25px"
+                      height="25px"
+                      viewBox="0 0 1024 1024"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill="#000000"
+                        d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64z"
+                      ></path>
+                      <path
+                        fill="#000000"
+                        d="m237.248 512 265.408 265.344a32 32 0 0 1-45.312 45.312l-288-288a32 32 0 0 1 0-45.312l288-288a32 32 0 1 1 45.312 45.312L237.248 512z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <p className="translate-x-2 cursor-pointer">Go Back</p>
                 </button>
+              </form>
             </div>
           </div>
         </div>
@@ -120,4 +141,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default RegisterPage;

@@ -1,22 +1,64 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import "./assets/styles/App.css";
+import ProtectedRoute from "./components/ProtectedRoute";
+import Hangout from "./pages/User/Hangout";
 import LoginPage from "./pages/LoginPage";
-import Home from "./pages/Home";
-import Destinasi from "./pages/Destinasi";
-import Hangout from "./pages/Hangout";
-import Kuliner from "./pages/Kuliner";
+import Kuliner from "./pages/User/Kuliner";
+import Home from "./pages/User/UserHome";
+import Wisata from "./pages/User/Wisata";
+import AdminHome from "./pages/Admin/AdminHome";
+import RegisterPage from "./pages/RegisterPage";
+import LandingPage from "./pages/LandingPage";
 
 function App() {
   return (
     <Router>
       <div className="App">
         <Routes>
-          <Route path="/" element={<LoginPage />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/destinasi" element={<Destinasi />} />
-          <Route path="/hangout" element={<Hangout />} />
-          <Route path="/kuliner" element={<Kuliner />} />
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route
+            path="/home"
+            element={
+              <ProtectedRoute allowedRoles={["USER"]}>
+                <Home />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/adminHome"
+            element={
+              <ProtectedRoute allowedRoles={["ADMIN"]}>
+                <AdminHome />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/destinasi"
+            element={
+              <ProtectedRoute allowedRoles={["USER"]}>
+                <Wisata />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/hangout"
+            element={
+              <ProtectedRoute allowedRoles={["USER"]}>
+                <Hangout />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/kuliner"
+            element={
+              <ProtectedRoute allowedRoles={["USER"]}>
+                <Kuliner />
+              </ProtectedRoute>
+            }
+          />
         </Routes>
       </div>
     </Router>

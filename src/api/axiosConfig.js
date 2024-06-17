@@ -2,7 +2,7 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-  baseURL: "https://rest-api-alpha-lilac.vercel.app/",
+  baseURL: "http://localhost:4000",
   headers: {
     "Content-Type": "application/json",
   },
