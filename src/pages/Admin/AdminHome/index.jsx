@@ -141,6 +141,7 @@ const AdminHome = () => {
                     <div className="card lg:card-side bg-base-100 shadow-2xl border-4 image-full w-full h-full">
                       <figure className="w-full h-full overflow-hidden">
                         <img
+                          loading="lazy"
                           src={wisata.image}
                           alt="wisata"
                           className="object-cover w-full h-full"
@@ -148,7 +149,7 @@ const AdminHome = () => {
                       </figure>
                       <div className="card-body w-full h-full">
                         <h2 className="card-title">{wisata.name}</h2>
-                        <p className="overflow-hidden text-wrap w-32">
+                        <p className="overflow-hidden text-wrap max-w-32">
                           {wisata.description}
                         </p>
                         <span className="flex items-center font-semibold">
@@ -191,6 +192,7 @@ const AdminHome = () => {
                     <div className="card lg:card-side bg-base-100 shadow-2xl border-4 image-full w-full h-full">
                       <figure className="w-full h-full overflow-hidden">
                         <img
+                          loading="lazy"
                           src={kuliner.image}
                           alt="Kuliner"
                           className="object-cover w-full h-full"
@@ -198,7 +200,7 @@ const AdminHome = () => {
                       </figure>
                       <div className="card-body w-full h-full">
                         <h2 className="card-title">{kuliner.name}</h2>
-                        <p className="overflow-hidden text-wrap w-32">
+                        <p className="overflow-hidden text-wrap max-w-32">
                           {kuliner.description}
                         </p>
                         <span className="flex items-center font-semibold">
@@ -241,6 +243,7 @@ const AdminHome = () => {
                     <div className="card lg:card-side bg-base-100 shadow-2xl border-4 image-full w-full h-full">
                       <figure className="w-full h-full overflow-hidden">
                         <img
+                          loading="lazy"
                           src={hangout.image}
                           alt="hangout"
                           className="object-cover w-full h-full"
@@ -248,7 +251,7 @@ const AdminHome = () => {
                       </figure>
                       <div className="card-body w-full h-full">
                         <h2 className="card-title">{hangout.name}</h2>
-                        <p className="overflow-hidden text-wrap w-32">
+                        <p className="overflow-hidden text-wrap max-w-32">
                           {hangout.description}
                         </p>
                         <span className="flex items-center font-semibold">
@@ -291,6 +294,7 @@ const AdminHome = () => {
                     {selectedKuliner.description}
                   </p>
                   <img
+                    loading="lazy"
                     src={selectedKuliner.image}
                     alt={selectedKuliner.name}
                     className="object-cover w-full h-64 border-2 border-black"
@@ -322,6 +326,7 @@ const AdminHome = () => {
                     {selectedHangout.description}
                   </p>
                   <img
+                    loading="lazy"
                     src={selectedHangout.image}
                     alt={selectedHangout.name}
                     className="object-cover w-full h-64 border-2 border-black"
@@ -353,6 +358,7 @@ const AdminHome = () => {
                     {selectedWisata.description}
                   </p>
                   <img
+                    loading="lazy"
                     src={selectedWisata.image}
                     alt={selectedWisata.name}
                     className="object-cover w-full h-64 border-2 border-black"

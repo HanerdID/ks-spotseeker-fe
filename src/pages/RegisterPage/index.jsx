@@ -49,6 +49,7 @@ const RegisterPage = () => {
       ) : (
         <div>
           <img
+            loading="lazy"
             src={homeBanner}
             alt="Login Page Background"
             className="fixed -z-20"
@@ -85,6 +86,7 @@ const RegisterPage = () => {
               <div className="flex">
                 <figure className="w-full h-full">
                   <img
+                    loading="lazy"
                     src={appBanner}
                     alt="App logo"
                     className="w-full h-full object-cover"
@@ -99,7 +101,7 @@ const RegisterPage = () => {
                     onSubmit={handleRegister}
                   >
                     <label className="input input-bordered flex items-center gap-2">
-                      <img src={nameImage} alt="name icon" className="w-4" />
+                      <img loading="lazy" src={nameImage} alt="name icon" className="w-4" />
                       <input
                         type="text"
                         className="grow form-control"
@@ -111,6 +113,7 @@ const RegisterPage = () => {
                     </label>
                     <label className="input input-bordered flex items-center gap-2">
                       <img
+                        loading="lazy"
                         src={usernameImage}
                         alt="username icon"
                         className="w-4"
@@ -126,6 +129,7 @@ const RegisterPage = () => {
                     </label>
                     <label className="input input-bordered flex items-center gap-2">
                       <img
+                        loading="lazy"
                         src={passwordImage}
                         alt="password icon"
                         className="w-4"

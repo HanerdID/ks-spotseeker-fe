@@ -52,6 +52,7 @@ const LoginPage = () => {
       ) : (
         <div>
           <img
+            loading="lazy"
             src={homeBanner}
             alt="Login Page Background"
             className="fixed -z-20 w-full h-full"
@@ -88,6 +89,7 @@ const LoginPage = () => {
               <div className="flex">
                 <figure className="w-full h-full">
                   <img
+                    loading="lazy"
                     src={appBanner}
                     alt="App logo"
                     className="w-full h-full object-cover"
@@ -100,6 +102,7 @@ const LoginPage = () => {
                   <form className="form-control gap-y-4" onSubmit={handleLogin}>
                     <label className="input input-bordered flex items-center gap-2">
                       <img
+                        loading="lazy"
                         src={usernameImage}
                         alt="username icon"
                         className="w-4"
@@ -115,6 +118,7 @@ const LoginPage = () => {
                     </label>
                     <label className="input input-bordered flex items-center gap-2">
                       <img
+                        loading="lazy"
                         src={passwordImage}
                         alt="password icon"
                         className="w-4"
