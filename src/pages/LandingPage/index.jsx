@@ -311,7 +311,9 @@ const LandingPage = () => {
           {selectedKuliner && (
             <>
               <h3 className="font-bold text-lg">{selectedKuliner.name}</h3>
-              <p className="py-4">{selectedKuliner.description}</p>
+              <p className="py-4 overflow-hidden text-wrap max-w-32">
+                {selectedKuliner.description}
+              </p>
               <img
                 src={selectedKuliner.image}
                 alt={selectedKuliner.name}
@@ -340,7 +342,9 @@ const LandingPage = () => {
           {selectedHangout && (
             <>
               <h3 className="font-bold text-lg">{selectedHangout.name}</h3>
-              <p className="py-4">{selectedHangout.description}</p>
+              <p className="py-4 overflow-hidden text-wrap max-w-32">
+                {selectedHangout.description}
+              </p>
               <img
                 src={selectedHangout.image}
                 alt={selectedHangout.name}
@@ -369,7 +373,9 @@ const LandingPage = () => {
           {selectedWisata && (
             <>
               <h3 className="font-bold text-lg">{selectedWisata.name}</h3>
-              <p className="py-4">{selectedWisata.description}</p>
+              <p className="py-4 overflow-hidden text-wrap max-w-32">
+                {selectedWisata.description}
+              </p>
               <img
                 src={selectedWisata.image}
                 alt={selectedWisata.name}

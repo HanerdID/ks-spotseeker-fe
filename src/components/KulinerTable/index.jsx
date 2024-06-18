@@ -110,7 +110,9 @@ const KulinerTable = () => {
               >
                 <td className="px-4 py-3 text-sm">{index + 1}</td>
                 <td className="px-4 py-3 text-sm">{kuliner.name}</td>
-                <td className="px-4 py-3 text-sm">{kuliner.description}</td>
+                <td className="px-4 py-3 text-sm max-w-32 overflow-hidden text-wrap">
+                  {kuliner.description}
+                </td>
                 <td className="px-4 py-3 text-sm">{kuliner.location}</td>
                 <td className="px-4 py-3 text-sm">{kuliner.image}</td>
                 <td className="px-1 py-3 text-sm">

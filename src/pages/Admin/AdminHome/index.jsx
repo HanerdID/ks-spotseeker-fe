@@ -134,7 +134,9 @@ const AdminHome = () => {
                   </figure>
                   <div className="card-body w-full h-full">
                     <h2 className="card-title">{wisata.name}</h2>
-                    <p>{wisata.description}</p>
+                    <p className="overflow-hidden text-wrap w-32">
+                      {wisata.description}
+                    </p>
                     <span className="flex items-center font-semibold">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -182,7 +184,9 @@ const AdminHome = () => {
                   </figure>
                   <div className="card-body w-full h-full">
                     <h2 className="card-title">{kuliner.name}</h2>
-                    <p>{kuliner.description}</p>
+                    <p className="overflow-hidden text-wrap w-32">
+                      {kuliner.description}
+                    </p>
                     <span className="flex items-center font-semibold">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -230,7 +234,9 @@ const AdminHome = () => {
                   </figure>
                   <div className="card-body w-full h-full">
                     <h2 className="card-title">{hangout.name}</h2>
-                    <p>{hangout.description}</p>
+                    <p className="overflow-hidden text-wrap w-32">
+                      {hangout.description}
+                    </p>
                     <span className="flex items-center font-semibold">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -267,7 +273,9 @@ const AdminHome = () => {
           {selectedKuliner && (
             <>
               <h3 className="font-bold text-lg">{selectedKuliner.name}</h3>
-              <p className="py-4">{selectedKuliner.description}</p>
+              <p className="py-4 overflow-hidden text-wrap max-w-32">
+                {selectedKuliner.description}
+              </p>
               <img
                 src={selectedKuliner.image}
                 alt={selectedKuliner.name}
@@ -296,7 +304,9 @@ const AdminHome = () => {
           {selectedHangout && (
             <>
               <h3 className="font-bold text-lg">{selectedHangout.name}</h3>
-              <p className="py-4">{selectedHangout.description}</p>
+              <p className="py-4 overflow-hidden text-wrap max-w-32">
+                {selectedHangout.description}
+              </p>
               <img
                 src={selectedHangout.image}
                 alt={selectedHangout.name}
@@ -325,7 +335,9 @@ const AdminHome = () => {
           {selectedWisata && (
             <>
               <h3 className="font-bold text-lg">{selectedWisata.name}</h3>
-              <p className="py-4">{selectedWisata.description}</p>
+              <p className="py-4 overflow-hidden text-wrap max-w-32">
+                {selectedWisata.description}
+              </p>
               <img
                 src={selectedWisata.image}
                 alt={selectedWisata.name}

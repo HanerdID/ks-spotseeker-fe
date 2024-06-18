@@ -110,7 +110,9 @@ const HangoutTable = () => {
               >
                 <td className="px-4 py-3 text-sm">{index + 1}</td>
                 <td className="px-4 py-3 text-sm">{hangout.name}</td>
-                <td className="px-4 py-3 text-sm">{hangout.description}</td>
+                <td className="px-4 py-3 text-sm max-w-32 overflow-hidden text-wrap">
+                  {hangout.description}
+                </td>
                 <td className="px-4 py-3 text-sm">{hangout.location}</td>
                 <td className="px-4 py-3 text-sm">{hangout.image}</td>
                 <td className="px-1 py-3 text-sm">

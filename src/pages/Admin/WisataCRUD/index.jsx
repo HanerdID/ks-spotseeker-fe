@@ -1,16 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
+
 import Navbar from "../../../components/Navbar";
 import WisataTable from "../../../components/WisataTable";
 import CreateWisata from "../../../components/CreateWisata";
 import MobileMenu from "../../../components/MobileMenu";
 
 const WisataCRUD = () => {
-  const [wisataList, setWisataList] = useState([]);
-
-  const addWisata = (newWisata) => {
-    setWisataList([...wisataList, newWisata]);
-  };
-
   return (
     <div>
       <Navbar
@@ -67,7 +62,7 @@ const WisataCRUD = () => {
             </button>
             <dialog id="createWisataModal" className="modal">
               <div className="modal-box">
-                <CreateWisata addWisata={addWisata} />
+                <CreateWisata />
                 <div className="modal-action">
                   <form method="dialog">
                     <button className="btn btn-warning">Close</button>
@@ -76,10 +71,10 @@ const WisataCRUD = () => {
               </div>
             </dialog>
           </div>
-          <WisataTable wisataList={wisataList} setWisataList={setWisataList} />
+          <WisataTable />
         </div>
       </div>
-      <MobileMenu />
+      <MobileMenu/>
     </div>
   );
 };
