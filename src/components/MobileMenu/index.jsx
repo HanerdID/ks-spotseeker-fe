@@ -4,7 +4,7 @@ const MobileMenu = () => {
   return (
     <div>
       <div className="lg:hidden">
-        <ul className="menu menu-horizontal bg-[#EDE0D1] rounded-box bottom-0 fixed z-[10] w-full justify-around items-center border-t-2 border-black">
+        <ul className="menu menu-horizontal bg-[#EDE0D1] rounded-box bottom-0 fixed z-[50] w-full justify-around items-center border-t-2 border-black">
           <li>
             <a href="/home" className="flex btn" rel="noreferrer noopener">
               <svg
@@ -24,7 +24,7 @@ const MobileMenu = () => {
               <span>Home</span>
             </a>
           </li>
-          <div className="divider divider-horizontal divider-info"></div>
+          <div className="divider divider-horizontal divider-neutral"></div>
           <li>
             <div className="dropdown dropdown-top dropdown-end">
               <div tabIndex={0} role="button" className="btn">
@@ -32,12 +32,36 @@ const MobileMenu = () => {
               </div>
               <ul
                 tabIndex={0}
-                className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
+                className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-72 divide-y-2 divide-neutral"
               >
                 <li>
                   <a
-                    href="/destinasi"
-                    className="flex tooltip"
+                    href="/adminHome"
+                    className="flex justify-center tooltip"
+                    data-tip="Details"
+                    rel="noreferrer noopener"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-5 w-5"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                    <span>Home</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/wisatacrud"
+                    className="flex justify-center tooltip"
                     data-tip="Details"
                     rel="noreferrer noopener"
                   >
@@ -60,8 +84,8 @@ const MobileMenu = () => {
                 </li>
                 <li>
                   <a
-                    href="/kuliner"
-                    className="flex tooltip"
+                    href="/kulinercrud"
+                    className="flex justify-center tooltip"
                     data-tip="Stats"
                     rel="noreferrer noopener"
                   >
@@ -84,8 +108,8 @@ const MobileMenu = () => {
                 </li>
                 <li>
                   <a
-                    href="/hangout"
-                    className="flex tooltip"
+                    href="/hangoutcrud"
+                    className="flex justify-center tooltip"
                     data-tip="Stats"
                     rel="noreferrer noopener"
                   >

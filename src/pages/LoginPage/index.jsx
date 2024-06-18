@@ -6,7 +6,6 @@ import Swal from "sweetalert2";
 import homeBanner from "../../assets/images/app-banner-home.png";
 import usernameImage from "../../assets/images/username.png";
 import passwordImage from "../../assets/images/password.png";
-import Spotseeker from "../../assets/images/KS-Spotseeker_logo.png";
 
 const LoginPage = () => {
   const [username, setUsername] = useState("");
@@ -47,10 +46,36 @@ const LoginPage = () => {
         alt="Login Page Background"
         className="fixed -z-20 w-full h-full"
       />
+      <div className="container fixed top-1 left-1 w-auto h-auto">
+        <button
+          type="button"
+          className="bg-white text-center w-48 rounded-2xl h-14 relative font-sans text-black text-sm font-semibold group"
+          onClick={() => navigate("/")}
+        >
+          <div className="bg-[#EDE0D1] rounded-xl h-12 w-1/4 flex items-center justify-center absolute left-1 top-[4px] group-hover:w-[184px] z-10 duration-500">
+            <svg
+              width="25px"
+              height="25px"
+              viewBox="0 0 1024 1024"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill="#000000"
+                d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64z"
+              ></path>
+              <path
+                fill="#000000"
+                d="m237.248 512 265.408 265.344a32 32 0 0 1-45.312 45.312l-288-288a32 32 0 0 1 0-45.312l288-288a32 32 0 1 1 45.312 45.312L237.248 512z"
+              ></path>
+            </svg>
+          </div>
+          <p className="translate-x-2">Back to Home</p>
+        </button>
+      </div>
       <div className="flex w-dvw h-dvh opacity-50 bg-black fixed -z-10" />
       <div className="flex w-dvw h-dvh justify-center items-center">
         <div className="flex flex-col md:flex-row w-full max-w-4xl shadow-2xl rounded-2xl overflow-hidden">
-          <div className="container">
+          <div className="flex">
             <figure className="w-full h-full">
               <img
                 src={appBanner}

@@ -2,14 +2,13 @@ import React from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import "./assets/styles/App.css";
 import ProtectedRoute from "./components/ProtectedRoute";
-import Hangout from "./pages/User/Hangout";
 import LoginPage from "./pages/LoginPage";
-import Kuliner from "./pages/User/Kuliner";
-import Home from "./pages/User/UserHome";
-import Wisata from "./pages/User/Wisata";
 import AdminHome from "./pages/Admin/AdminHome";
 import RegisterPage from "./pages/RegisterPage";
 import LandingPage from "./pages/LandingPage";
+import WisataCRUD from "./pages/Admin/WisataCRUD";
+import KulinerCRUD from "./pages/Admin/KulinerCRUD";
+import HangoutCRUD from "./pages/Admin/HangoutCRUD";
 
 function App() {
   return (
@@ -20,14 +19,6 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route
-            path="/home"
-            element={
-              <ProtectedRoute allowedRoles={["USER"]}>
-                <Home />
-              </ProtectedRoute>
-            }
-          />
-          <Route
             path="/adminHome"
             element={
               <ProtectedRoute allowedRoles={["ADMIN"]}>
@@ -36,26 +27,26 @@ function App() {
             }
           />
           <Route
-            path="/destinasi"
+            path="/wisatacrud"
             element={
-              <ProtectedRoute allowedRoles={["USER"]}>
-                <Wisata />
+              <ProtectedRoute allowedRoles={["ADMIN"]}>
+                <WisataCRUD />
               </ProtectedRoute>
             }
           />
           <Route
-            path="/hangout"
+            path="/kulinercrud"
             element={
-              <ProtectedRoute allowedRoles={["USER"]}>
-                <Hangout />
+              <ProtectedRoute allowedRoles={["ADMIN"]}>
+                <KulinerCRUD />
               </ProtectedRoute>
             }
           />
           <Route
-            path="/kuliner"
+            path="/hangoutcrud"
             element={
-              <ProtectedRoute allowedRoles={["USER"]}>
-                <Kuliner />
+              <ProtectedRoute allowedRoles={["ADMIN"]}>
+                <HangoutCRUD />
               </ProtectedRoute>
             }
           />

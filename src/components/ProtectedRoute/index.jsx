@@ -10,7 +10,7 @@ const ProtectedRoute = ({ children, allowedRoles }) => {
   const user = JSON.parse(atob(token.split(".")[1]));
 
   if (!allowedRoles.includes(user.role)) {
-    return <Navigate to="/unauthorized" />;
+    return <Navigate to="/" />;
   }
 
   return children;

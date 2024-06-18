@@ -7,7 +7,7 @@ const Hero = (props) => {
         className="hero h-96"
         style={{
           backgroundImage: `url(${props.image})`,
-          backgroundSize: `${props.backgroundSize}`,
+          backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
