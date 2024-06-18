@@ -20,10 +20,10 @@ const AdminHome = () => {
 
   const getHangout = async () => {
     try {
-      const response = await axios.get("http://localhost:4000/hangout");
+      const response = await axios.get(`${process.env.BASE_URL}/hangout`);
       const hangoutImage = response.data.map((hangout) => ({
         ...hangout,
-        image: `http://localhost:4000/${hangout.image}`,
+        image: `${process.env.BASE_URL}/${hangout.image}`,
       }));
       setHangout(hangoutImage);
     } catch (error) {
@@ -33,10 +33,10 @@ const AdminHome = () => {
 
   const getKuliner = async () => {
     try {
-      const response = await axios.get("http://localhost:4000/kuliner");
+      const response = await axios.get(`${process.env.BASE_URL}/kuliner`);
       const kulinerImage = response.data.map((kuliner) => ({
         ...kuliner,
-        image: `http://localhost:4000/${kuliner.image}`,
+        image: `${process.env.BASE_URL}/${kuliner.image}`,
       }));
       setKuliner(kulinerImage);
     } catch (error) {
@@ -46,10 +46,10 @@ const AdminHome = () => {
 
   const getWisata = async () => {
     try {
-      const response = await axios.get("http://localhost:4000/wisata");
+      const response = await axios.get(`${process.env.BASE_URL}/wisata`);
       const wisataImage = response.data.map((wisata) => ({
         ...wisata,
-        image: `http://localhost:4000/${wisata.image}`,
+        image: `${process.env.BASE_URL}/${wisata.image}`,
       }));
       setWisata(wisataImage);
     } catch (error) {

@@ -18,7 +18,7 @@ const CreateWisata = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:4000/wisata",
+        `${process.env.BASE_URL}/wisata`,
         formData,
         {
           headers: {

@@ -17,7 +17,7 @@ const WisataTable = () => {
 
   const getWisata = async () => {
     try {
-      const response = await axios.get("http://localhost:4000/wisata");
+      const response = await axios.get(`${process.env.BASE_URL}/wisata`);
       setWisata(response.data);
     } catch (error) {
       console.log("Get Wisata Failed");
@@ -26,7 +26,7 @@ const WisataTable = () => {
 
   const getWisataById = async (id) => {
     try {
-      const response = await axios.get(`http://localhost:4000/wisata/${id}`);
+      const response = await axios.get(`${process.env.BASE_URL}/wisata/${id}`);
       setDataWisata(response.data);
     } catch (error) {
       console.log("Get Wisata Failed", error);
@@ -41,7 +41,7 @@ const WisataTable = () => {
       image: dataWisata.image,
     };
     try {
-      await axios.put(`http://localhost:4000/wisata/${id}`, formData, {
+      await axios.put(`${process.env.BASE_URL}/wisata/${id}`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -69,7 +69,7 @@ const WisataTable = () => {
 
   const deleteWisata = async (id) => {
     try {
-      await axios.delete(`http://localhost:4000/wisata/${id}`);
+      await axios.delete(`${process.env.BASE_URL}/${id}`);
       Swal.fire({
         icon: "success",
         title: "Deleted",

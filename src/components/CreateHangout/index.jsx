@@ -18,7 +18,7 @@ const CreateHangout = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:4000/hangout",
+        `${process.env.BASE_URL}/hangout`,
         formData,
         {
           headers: {
