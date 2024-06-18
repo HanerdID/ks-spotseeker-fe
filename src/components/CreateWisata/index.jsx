@@ -10,6 +10,7 @@ const CreateWisata = () => {
   const [image, setImage] = useState(null);
 
   const handleSubmit = async (e) => {
+    e.preventDefault();
     const formData = new FormData();
     formData.append("name", wisata.name);
     formData.append("description", wisata.description);
@@ -46,10 +47,15 @@ const CreateWisata = () => {
   return (
     <div>
       <div className="flex flex-col justify-center rounded-2xl bg-slate-500 p-8 md:p-16 gap-y-6">
-        <h2 className="text-center text-2xl font-semibold">Form Create Wisata</h2>
+        <h2 className="text-center text-2xl font-semibold">
+          Form Create Wisata
+        </h2>
         <div className="w-full">
           <form className="form-control gap-y-4" onSubmit={handleSubmit}>
-            <label htmlFor="name" className="input input-bordered flex items-center gap-2">
+            <label
+              htmlFor="name"
+              className="input input-bordered flex items-center gap-2"
+            >
               <svg
                 className="h-4 w-4 text-slate-900"
                 fill="none"
@@ -64,7 +70,8 @@ const CreateWisata = () => {
                 />
               </svg>
               <input
-              name="name"
+                id="name"
+                name="name"
                 type="text"
                 className="grow"
                 placeholder="Nama"
@@ -73,7 +80,10 @@ const CreateWisata = () => {
                 onChange={(e) => handleChange(e, "name")}
               />
             </label>
-            <label htmlFor="description" className="input input-bordered flex items-center gap-2">
+            <label
+              htmlFor="description"
+              className="input input-bordered flex items-center gap-2"
+            >
               <svg
                 className="h-4 w-4 text-slate-900"
                 width="24"
@@ -94,7 +104,8 @@ const CreateWisata = () => {
                 <line x1="13" y1="16" x2="15" y2="16" />
               </svg>
               <input
-              name="description"
+                id="description"
+                name="description"
                 type="text"
                 className="grow"
                 placeholder="Deskripsi"
@@ -103,7 +114,10 @@ const CreateWisata = () => {
                 onChange={(e) => handleChange(e, "description")}
               />
             </label>
-            <label htmlFor="location" className="input input-bordered flex items-center gap-2">
+            <label
+              htmlFor="location"
+              className="input input-bordered flex items-center gap-2"
+            >
               <svg
                 className="h-4 w-4 text-slate-900"
                 viewBox="0 0 24 24"
@@ -117,7 +131,8 @@ const CreateWisata = () => {
                 <circle cx="12" cy="10" r="3" />
               </svg>
               <input
-              name="location"
+                id="location"
+                name="location"
                 type="text"
                 className="grow"
                 placeholder="Lokasi"
@@ -131,6 +146,7 @@ const CreateWisata = () => {
                 <span className="label-text">Pick a file</span>
               </div>
               <input
+                id="image"
                 name="image"
                 type="file"
                 className="file-input file-input-bordered w-full max-w-xs"

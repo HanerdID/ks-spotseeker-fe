@@ -172,7 +172,7 @@ const LandingPage = () => {
                   </figure>
                   <div className="card-body w-full h-full">
                     <h2 className="card-title">{wisata.name}</h2>
-                    <p className="overflow-hidden text-wrap">
+                    <p className="overflow-hidden text-wrap w-32">
                       {wisata.description}
                     </p>
                     <span className="flex items-center font-semibold">
@@ -222,7 +222,7 @@ const LandingPage = () => {
                   </figure>
                   <div className="card-body w-full h-full">
                     <h2 className="card-title">{kuliner.name}</h2>
-                    <p className="overflow-hidden text-wrap">
+                    <p className="overflow-hidden text-wrap w-32">
                       {kuliner.description}
                     </p>
                     <span className="flex items-center font-semibold">
@@ -272,7 +272,7 @@ const LandingPage = () => {
                   </figure>
                   <div className="card-body w-full h-full">
                     <h2 className="card-title">{hangout.name}</h2>
-                    <p className="overflow-hidden text-wrap">
+                    <p className="overflow-hidden text-wrap w-32">
                       {hangout.description}
                     </p>
                     <span className="flex items-center font-semibold">
