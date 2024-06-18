@@ -161,11 +161,8 @@ const LandingPage = () => {
           </div>
           <div className="flex w-auto justify-evenly my-4 py-4 bg-red-300 rounded-xl flex-wrap gap-8">
             {wisata.map((wisata, index) => (
-              <div
-                key={index + 1}
-                className="w-64 h-64"
-              >
-                <div className="card lg:card-side bg-base-100 shadow-2xl border-4 image-full w-full h-full overflow-hidden text-wrap">
+              <div key={index + 1} className="w-64 h-64">
+                <div className="card lg:card-side bg-base-100 shadow-2xl border-4 image-full w-full h-full">
                   <figure className="w-full h-full overflow-hidden">
                     <img
                       src={wisata.image}
@@ -175,7 +172,9 @@ const LandingPage = () => {
                   </figure>
                   <div className="card-body w-full h-full">
                     <h2 className="card-title">{wisata.name}</h2>
-                    <p>{wisata.description}</p>
+                    <p className="overflow-hidden text-wrap">
+                      {wisata.description}
+                    </p>
                     <span className="flex items-center font-semibold">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -212,11 +211,8 @@ const LandingPage = () => {
           </div>
           <div className="flex w-auto justify-evenly my-4 py-4 bg-green-300 rounded-xl flex-wrap gap-8">
             {kuliner.map((kuliner, index) => (
-              <div
-                key={index + 1}
-                className="w-64 h-64"
-              >
-                <div className="card lg:card-side bg-base-100 shadow-2xl border-4 image-full w-full h-full overflow-hidden text-wrap">
+              <div key={index + 1} className="w-64 h-64">
+                <div className="card lg:card-side bg-base-100 shadow-2xl border-4 image-full w-full h-full">
                   <figure className="w-full h-full overflow-hidden">
                     <img
                       src={kuliner.image}
@@ -226,7 +222,9 @@ const LandingPage = () => {
                   </figure>
                   <div className="card-body w-full h-full">
                     <h2 className="card-title">{kuliner.name}</h2>
-                    <p>{kuliner.description}</p>
+                    <p className="overflow-hidden text-wrap">
+                      {kuliner.description}
+                    </p>
                     <span className="flex items-center font-semibold">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -263,11 +261,8 @@ const LandingPage = () => {
           </div>
           <div className="flex w-auto justify-evenly my-4 py-4 bg-yellow-300 rounded-xl flex-wrap gap-8">
             {hangout.map((hangout, index) => (
-              <div
-                key={index + 1}
-                className="w-64 h-64"
-              >
-                <div className="card lg:card-side bg-base-100 shadow-2xl border-4 image-full w-full h-full overflow-hidden text-wrap">
+              <div key={index + 1} className="w-64 h-64">
+                <div className="card lg:card-side bg-base-100 shadow-2xl border-4 image-full w-full h-full">
                   <figure className="w-full h-full overflow-hidden">
                     <img
                       src={hangout.image}
@@ -277,7 +272,9 @@ const LandingPage = () => {
                   </figure>
                   <div className="card-body w-full h-full">
                     <h2 className="card-title">{hangout.name}</h2>
-                    <p>{hangout.description}</p>
+                    <p className="overflow-hidden text-wrap">
+                      {hangout.description}
+                    </p>
                     <span className="flex items-center font-semibold">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"

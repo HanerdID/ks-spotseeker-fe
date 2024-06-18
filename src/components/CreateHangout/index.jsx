@@ -51,7 +51,7 @@ const CreateHangout = () => {
         </h2>
         <div className="w-full">
           <form className="form-control gap-y-4" onSubmit={handleSubmit}>
-            <label className="input input-bordered flex items-center gap-2">
+            <label htmlFor="name" className="input input-bordered flex items-center gap-2">
               <svg
                 className="h-4 w-4 text-slate-900"
                 fill="none"
@@ -66,6 +66,7 @@ const CreateHangout = () => {
                 />
               </svg>
               <input
+              name="name"
                 type="text"
                 className="grow"
                 placeholder="Nama"
@@ -74,7 +75,7 @@ const CreateHangout = () => {
                 onChange={(e) => handleChange(e, "name")}
               />
             </label>
-            <label className="input input-bordered flex items-center gap-2">
+            <label htmlFor="description" className="input input-bordered flex items-center gap-2">
               <svg
                 className="h-4 w-4 text-slate-900"
                 width="24"
@@ -95,6 +96,7 @@ const CreateHangout = () => {
                 <line x1="13" y1="16" x2="15" y2="16" />
               </svg>
               <input
+              name="description"
                 type="text"
                 className="grow"
                 placeholder="Deskripsi"
@@ -103,7 +105,7 @@ const CreateHangout = () => {
                 onChange={(e) => handleChange(e, "description")}
               />
             </label>
-            <label className="input input-bordered flex items-center gap-2">
+            <label htmlFor="location" className="input input-bordered flex items-center gap-2">
               <svg
                 className="h-4 w-4 text-slate-900"
                 viewBox="0 0 24 24"
@@ -117,6 +119,7 @@ const CreateHangout = () => {
                 <circle cx="12" cy="10" r="3" />
               </svg>
               <input
+              name="location"
                 type="text"
                 className="grow"
                 placeholder="Lokasi"
