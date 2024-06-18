@@ -182,9 +182,9 @@ const LandingPage = () => {
                           className="object-cover w-full h-full"
                         />
                       </figure>
-                      <div className="card-body w-full h-full">
+                      <div className="card-body overflow-hidden w-full h-full">
                         <h2 className="card-title">{wisata.name}</h2>
-                        <p className="overflow-hidden text-wrap max-w-32">
+                        <p className="overflow-hidden text-wrap max-w-32 max-h-12">
                           {wisata.description}
                         </p>
                         <span className="flex items-center font-semibold">
@@ -233,9 +233,9 @@ const LandingPage = () => {
                           className="object-cover w-full h-full"
                         />
                       </figure>
-                      <div className="card-body w-full h-full">
+                      <div className="card-body overflow-hidden w-full h-full">
                         <h2 className="card-title">{kuliner.name}</h2>
-                        <p className="overflow-hidden text-wrap max-w-32">
+                        <p className="overflow-hidden text-wrap max-w-32 max-h-12">
                           {kuliner.description}
                         </p>
                         <span className="flex items-center font-semibold">
@@ -284,9 +284,9 @@ const LandingPage = () => {
                           className="object-cover w-full h-full"
                         />
                       </figure>
-                      <div className="card-body w-full h-full">
+                      <div className="card-body overflow-hidden w-full h-full">
                         <h2 className="card-title">{hangout.name}</h2>
-                        <p className="overflow-hidden text-wrap max-w-32">
+                        <p className="overflow-hidden text-wrap max-w-32 max-h-12">
                           {hangout.description}
                         </p>
                         <span className="flex items-center font-semibold">
@@ -325,7 +325,7 @@ const LandingPage = () => {
               {selectedKuliner && (
                 <>
                   <h3 className="font-bold text-lg">{selectedKuliner.name}</h3>
-                  <p className="py-4 overflow-hidden text-wrap max-w-32">
+                  <p className="py-4 overflow-hidden text-wrap max-w-32 max-h-12">
                     {selectedKuliner.description}
                   </p>
                   <img
@@ -357,7 +357,7 @@ const LandingPage = () => {
               {selectedHangout && (
                 <>
                   <h3 className="font-bold text-lg">{selectedHangout.name}</h3>
-                  <p className="py-4 overflow-hidden text-wrap max-w-32">
+                  <p className="py-4 overflow-hidden text-wrap max-w-32 max-h-12">
                     {selectedHangout.description}
                   </p>
                   <img
@@ -389,7 +389,7 @@ const LandingPage = () => {
               {selectedWisata && (
                 <>
                   <h3 className="font-bold text-lg">{selectedWisata.name}</h3>
-                  <p className="py-4 overflow-hidden text-wrap max-w-32">
+                  <p className="py-4 overflow-hidden text-wrap max-w-32 max-h-12">
                     {selectedWisata.description}
                   </p>
                   <img
