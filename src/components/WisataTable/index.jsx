@@ -69,7 +69,7 @@ const WisataTable = () => {
 
   const deleteWisata = async (id) => {
     try {
-      await axios.delete(`${process.env.REACT_APP_BASE_URL}/${id}`);
+      await axios.delete(`${process.env.REACT_APP_BASE_URL}/wisata/${id}`);
       Swal.fire({
         icon: "success",
         title: "Deleted",
