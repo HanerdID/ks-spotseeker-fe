@@ -187,7 +187,7 @@ const LandingPage = () => {
                         <p className="text-justify truncate max-w-60">
                           {wisata.description}
                         </p>
-                        <span className="flex items-center font-semibold">
+                        <span className="flex items-center font-semibold text-justify truncate">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 24 24"
@@ -238,7 +238,7 @@ const LandingPage = () => {
                         <p className="text-justify truncate max-w-60">
                           {kuliner.description}
                         </p>
-                        <span className="flex items-center font-semibold">
+                        <span className="flex items-center font-semibold text-justify truncate">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 24 24"
@@ -289,7 +289,7 @@ const LandingPage = () => {
                         <p className="text-justify truncate max-w-60">
                           {hangout.description}
                         </p>
-                        <span className="flex items-center font-semibold">
+                        <span className="flex items-center font-semibold text-justify truncate">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 24 24"
