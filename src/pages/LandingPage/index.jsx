@@ -47,10 +47,12 @@ const LandingPage = () => {
 
   const getHangout = async () => {
     try {
-      const response = await axios.get(`${process.env.BASE_URL}/hangout`);
+      const response = await axios.get(
+        `${process.env.REACT_APP_BASE_URL}/hangout`
+      );
       const hangoutImage = response.data.map((hangout) => ({
         ...hangout,
-        image: `${process.env.BASE_URL}/${hangout.image}`,
+        image: `${process.env.REACT_APP_BASE_URL}/${hangout.image}`,
       }));
       setHangout(hangoutImage);
     } catch (error) {
@@ -60,10 +62,12 @@ const LandingPage = () => {
 
   const getKuliner = async () => {
     try {
-      const response = await axios.get(`${process.env.BASE_URL}/kuliner`);
+      const response = await axios.get(
+        `${process.env.REACT_APP_BASE_URL}/kuliner`
+      );
       const kulinerImage = response.data.map((kuliner) => ({
         ...kuliner,
-        image: `${process.env.BASE_URL}/${kuliner.image}`,
+        image: `${process.env.REACT_APP_BASE_URL}/${kuliner.image}`,
       }));
       setKuliner(kulinerImage);
     } catch (error) {
@@ -73,16 +77,20 @@ const LandingPage = () => {
 
   const getWisata = async () => {
     try {
-      const response = await axios.get(`${process.env.BASE_URL}/wisata`);
+      const response = await axios.get(
+        `${process.env.REACT_APP_BASE_URL}/wisata`
+      );
       const wisataImage = response.data.map((wisata) => ({
         ...wisata,
-        image: `${process.env.BASE_URL}/${wisata.image}`,
+        image: `${process.env.REACT_APP_BASE_URL}/${wisata.image}`,
       }));
       setWisata(wisataImage);
     } catch (error) {
       console.error(error);
     }
   };
+
+
 
   const showKuliner = (kuliner) => {
     setSelectedKuliner(kuliner);
