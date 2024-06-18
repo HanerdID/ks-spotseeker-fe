@@ -18,7 +18,7 @@ const CreateKuliner = () => {
 
     try {
       const response = await axios.post(
-        `${process.env.BASE_URL}/kuliner`,
+        `${process.env.REACT_APP_BASE_URL}/kuliner`,
         formData,
         {
           headers: {

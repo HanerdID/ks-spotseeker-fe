@@ -17,7 +17,7 @@ const HangoutTable = () => {
 
   const getHangout = async () => {
     try {
-      const response = await axios.get(`${process.env.BASE_URL}/hangout`);
+      const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/hangout`);
       setHangout(response.data);
     } catch (error) {
       console.log("Get Hangout Failed");
@@ -26,7 +26,7 @@ const HangoutTable = () => {
 
   const getHangoutById = async (id) => {
     try {
-      const response = await axios.get(`${process.env.BASE_URL}/hangout/${id}`);
+      const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/hangout/${id}`);
       setDataHangout(response.data);
     } catch (error) {
       console.log("Get Hangout Failed", error);
@@ -41,7 +41,7 @@ const HangoutTable = () => {
       image: dataHangout.image,
     };
     try {
-      await axios.put(`${process.env.BASE_URL}/hangout/${id}`, formData, {
+      await axios.put(`${process.env.REACT_APP_BASE_URL}/hangout/${id}`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -69,7 +69,7 @@ const HangoutTable = () => {
 
   const deleteHangout = async (id) => {
     try {
-      await axios.delete(`${process.env.BASE_URL}/hangout/${id}`);
+      await axios.delete(`${process.env.REACT_APP_BASE_URL}/hangout/${id}`);
       Swal.fire({
         icon: "success",
         title: "Deleted",

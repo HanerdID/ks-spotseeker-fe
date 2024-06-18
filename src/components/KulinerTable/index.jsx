@@ -17,7 +17,7 @@ const KulinerTable = () => {
 
   const getKulinerData = async () => {
     try {
-      const response = await axios.get(`${process.env.BASE_URL}/kuliner`);
+      const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/kuliner`);
       setKuliner(response.data);
     } catch (error) {
       console.log("Get Kuliner Failed");
@@ -26,7 +26,7 @@ const KulinerTable = () => {
 
   const getKulinerById = async (id) => {
     try {
-      const response = await axios.get(`${process.env.BASE_URL}/kuliner/${id}`);
+      const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/kuliner/${id}`);
       setDataKuliner(response.data);
     } catch (error) {
       console.log("Get Kuliner Failed", error);
@@ -41,7 +41,7 @@ const KulinerTable = () => {
         image: dataKuliner.image,
     }
     try {
-      await axios.put(`${process.env.BASE_URL}/kuliner/${id}`, formData, {
+      await axios.put(`${process.env.REACT_APP_BASE_URL}/kuliner/${id}`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -69,7 +69,7 @@ const KulinerTable = () => {
 
   const deleteKulinerData = async (id) => {
     try {
-      await axios.delete(`${process.env.BASE_URL}/kuliner/${id}`);
+      await axios.delete(`${process.env.REACT_APP_BASE_URL}/kuliner/${id}`);
       Swal.fire({
         icon: "success",
         title: "Deleted",
