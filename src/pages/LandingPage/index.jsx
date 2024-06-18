@@ -11,11 +11,11 @@ import BackToTopButton from "../../components/BackToTopButton";
 const LandingPage = () => {
   const [navbarColor, setNavbarColor] = useState("");
   const [textColor, setTextColor] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
   useEffect(() => {
-    setLoading(true);
+    setLoading(false);
   }, []);
 
   const handleScroll = () => {
@@ -113,8 +113,8 @@ const LandingPage = () => {
   return (
     <div>
       {loading ? (
-        <div className="flex w-dvw h-dvh opacity-50 bg-black z-40">
-          <span className="loading loading-infinity loading-lg z-50"></span>
+        <div className="flex w-dvw h-dvh justify-center items-center opacity-70 bg-black z-40">
+          <span className="loading loading-dots z-50 w-96"></span>
         </div>
       ) : (
         <div>

@@ -12,10 +12,10 @@ const LoginPage = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setLoading(true);
+    setLoading(false);
   }, []);
 
   const handleLogin = async (e) => {
@@ -46,8 +46,8 @@ const LoginPage = () => {
   return (
     <div>
       {loading ? (
-        <div className="flex w-dvw h-dvh opacity-50 bg-black z-40">
-          <span className="loading loading-infinity loading-lg z-50"></span>
+        <div className="flex w-dvw h-dvh justify-center items-center opacity-70 bg-black z-40">
+          <span className="loading loading-dots z-50 w-96"></span>
         </div>
       ) : (
         <div>
