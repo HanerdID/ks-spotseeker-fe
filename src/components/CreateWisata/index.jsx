@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const CreateWisata = () => {
+const CreateWisata = ({ addWisata }) => {
   const [wisata, setWisata] = useState({
     name: "",
     description: "",
@@ -28,7 +28,7 @@ const CreateWisata = () => {
         }
       );
 
-      console.log(response.data);
+      addWisata(response.data); // Update the wisata list in WisataCRUD
     } catch (error) {
       console.error(error);
     }
@@ -155,19 +155,12 @@ const CreateWisata = () => {
                 onChange={(e) => handleChange(e, "image")}
               />
               <div className="label">
-                <span className="label-text-alt">
-                  Format : .jpg, .jpeg, .png
-                </span>
+                <span className="label-text-alt">Max size: 2MB</span>
               </div>
             </label>
-            <div className="flex w-full justify-center items-center">
-              <button
-                className="btn bg-[#EDE0D1] hover:bg-[#CCBAA7] w-full"
-                type="submit"
-              >
-                Add Wisata
-              </button>
-            </div>
+            <button type="submit" className="btn btn-warning">
+              Create
+            </button>
           </form>
         </div>
       </div>
