@@ -184,7 +184,7 @@ const LandingPage = () => {
                       </figure>
                       <div className="card-body overflow-hidden w-full h-full">
                         <h2 className="card-title">{wisata.name}</h2>
-                        <p className="overflow-hidden text-wrap truncate max-w-24">
+                        <p className="text-justify truncate max-w-60">
                           {wisata.description}
                         </p>
                         <span className="flex items-center font-semibold">
@@ -235,7 +235,7 @@ const LandingPage = () => {
                       </figure>
                       <div className="card-body overflow-hidden w-full h-full">
                         <h2 className="card-title">{kuliner.name}</h2>
-                        <p className="overflow-hidden text-wrap truncate max-w-24">
+                        <p className="text-justify truncate max-w-60">
                           {kuliner.description}
                         </p>
                         <span className="flex items-center font-semibold">
@@ -286,7 +286,7 @@ const LandingPage = () => {
                       </figure>
                       <div className="card-body overflow-hidden w-full h-full">
                         <h2 className="card-title">{hangout.name}</h2>
-                        <p className="overflow-hidden text-wrap truncate max-w-24">
+                        <p className="text-justify truncate max-w-60">
                           {hangout.description}
                         </p>
                         <span className="flex items-center font-semibold">
@@ -338,8 +338,16 @@ const LandingPage = () => {
                 loading="lazy"
                 src={selectedKuliner.image}
                 alt="modal_image"
-                className="object-cover w-full h-96"
+                className="object-cover w-full h-96 border-2 border-black"
               />
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126683.27363976087!2d110.30618018639497!3d-7.1430723459259164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7088a18dc5c0d7%3A0x739a5f6308956eb0!2sGubug%20Makan%20Mang%20Engking%20Ungaran!5e0!3m2!1sen!2sid!4v1718710637566!5m2!1sen!2sid"
+                className="border-2 border-black w-full h-96"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Map of Gubug Makan Mang Engking Ungaran"
+              ></iframe>
               <p className="py-4 text-justify">{selectedKuliner.description}</p>
               <span className="flex items-center font-semibold">
                 <svg
@@ -375,8 +383,16 @@ const LandingPage = () => {
                 loading="lazy"
                 src={selectedHangout.image}
                 alt="modal_image"
-                className="object-cover w-full h-96"
+                className="object-cover w-full h-96 border-2 border-black"
               />
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1013354.6604096999!2d109.70785585057685!3d-7.193210209647833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e70871073d211d5%3A0x894a4448f7d3e991!2sPondok%20Kopi%20Umbul%20Sidomukti!5e0!3m2!1sen!2sid!4v1718710519255!5m2!1sen!2sid"
+                className="border-2 border-black w-full h-96"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Map of Pondok Kopi Umbul Sidomukti"
+              ></iframe>
               <p className="py-4 text-justify">{selectedHangout.description}</p>
               <span className="flex items-center font-semibold">
                 <svg
@@ -392,6 +408,51 @@ const LandingPage = () => {
                   />
                 </svg>
                 {selectedHangout.location}
+              </span>
+            </div>
+          )}
+        </form>
+      </dialog>
+      <dialog id="modal_wisata" className="modal">
+        <form method="dialog" className="modal-box max-w-3xl">
+          <button
+            htmlFor="my-modal-3"
+            className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+          >
+            ✕
+          </button>
+          {selectedWisata && (
+            <div className="modal-box-body">
+              <h3 className="font-bold text-lg">{selectedWisata.name}</h3>
+              <img
+                loading="lazy"
+                src={selectedWisata.image}
+                alt="modal_image"
+                className="object-cover w-full h-96 border-2 border-black"
+              />
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d253351.19420072326!2d110.23750588927037!3d-7.170723470113191!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e70871d08b3ed03%3A0x28b1ccd395dae5f8!2sTirto%20Wening%20Waterfall!5e0!3m2!1sen!2sid!4v1718710568243!5m2!1sen!2sid"
+                className="border-2 border-black w-full h-96"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Map of Tirto Wening Waterfall"
+              ></iframe>
+              <p className="py-4 text-justify">{selectedWisata.description}</p>
+              <span className="flex items-center font-semibold">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="size-6"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="m11.54 22.351.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 1.144-.742 19.58 19.58 0 0 0 2.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 0 0-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 0 0 2.682 2.282 16.975 16.975 0 0 0 1.145.742ZM12 13.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+                {selectedWisata.location}
               </span>
             </div>
           )}
