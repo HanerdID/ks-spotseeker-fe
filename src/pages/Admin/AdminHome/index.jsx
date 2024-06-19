@@ -12,7 +12,7 @@ const AdminHome = () => {
   const [selectedKuliner, setSelectedKuliner] = useState(null);
   const [selectedHangout, setSelectedHangout] = useState(null);
   const [selectedWisata, setSelectedWisata] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     getHangout();

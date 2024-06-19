@@ -12,7 +12,7 @@ import Spinner from "../../components/Spinner";
 const LandingPage = () => {
   const [navbarColor, setNavbarColor] = useState("");
   const [textColor, setTextColor] = useState("");
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleScroll = () => {
