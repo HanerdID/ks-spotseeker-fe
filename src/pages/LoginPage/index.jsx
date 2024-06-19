@@ -12,11 +12,6 @@ const LoginPage = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    setLoading(false);
-  }, []);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -30,14 +25,16 @@ const LoginPage = () => {
     } catch (error) {
       console.log("Gagal Login");
       setError("Login failed");
+    } finally {
     }
   };
+
   useEffect(() => {
     if (error) {
       Swal.fire({
         icon: "error",
         title: "Login Failed",
-        text: "Username or password is incorrect",
+        text: "There was an error during login. Please try again.",
       });
       setError("");
     }
@@ -45,18 +42,14 @@ const LoginPage = () => {
 
   return (
     <div>
-      {loading ? (
-        <div className="flex w-dvw h-dvh justify-center items-center opacity-70 bg-black z-40">
-          <span className="loading loading-dots z-50 w-96"></span>
-        </div>
-      ) : (
+      <img
+        loading="lazy"
+        src={homeBanner}
+        alt="Login Page Background"
+        className="fixed -z-20 w-full h-full"
+      />
+      
         <div>
-          <img
-            loading="lazy"
-            src={homeBanner}
-            alt="Login Page Background"
-            className="fixed -z-20 w-full h-full"
-          />
           <div className="container fixed top-1 left-1 w-auto h-auto">
             <button
               type="button"
@@ -159,7 +152,7 @@ const LoginPage = () => {
             </div>
           </div>
         </div>
-      )}
+      
     </div>
   );
 };
