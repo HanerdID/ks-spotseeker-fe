@@ -1,92 +1,122 @@
-.glitch {
+.loader {
+  width: 80px;
+  height: 50px;
   position: relative;
-  font-size: 25px;
-  font-weight: 700;
-  line-height: 1.2;
-  color: #fff;
-  letter-spacing: 5px;
-  z-index: 1;
-  animation: shift 1s ease-in-out infinite alternate;
 }
 
-.glitch:before,
-.glitch:after {
-  display: block;
-  content: attr(data-glitch);
+.loader-text {
   position: absolute;
   top: 0;
-  left: 0;
-  opacity: 0.8;
+  padding: 0;
+  margin: 0;
+  color: #EDE0D1;
+  animation: text_713 3.5s ease both infinite;
+  font-size: .8rem;
+  letter-spacing: 1px;
 }
 
-.glitch:before {
-  animation: glitch 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
-  color: #8b00ff;
-  z-index: -1;
+.load {
+  background-color: #9A79FF;
+  border-radius: 50px;
+  display: block;
+  height: 16px;
+  width: 16px;
+  bottom: 0;
+  position: absolute;
+  transform: translateX(64px);
+  animation: loading_713 3.5s ease both infinite;
 }
 
-.glitch:after {
-  animation: glitch 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
-  color: #00e571;
-  z-index: -2;
+.load::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: #f9eee0;
+  border-radius: inherit;
+  animation: loading2_713 3.5s ease both infinite;
 }
 
-@keyframes glitch {
+@keyframes text_713 {
   0% {
-    transform: translate(0);
-  }
-
-  20% {
-    transform: translate(-3px, 3px);
+    letter-spacing: 1px;
+    transform: translateX(0px);
   }
 
   40% {
-    transform: translate(-3px, -3px);
-  }
-
-  60% {
-    transform: translate(3px, 3px);
+    letter-spacing: 2px;
+    transform: translateX(26px);
   }
 
   80% {
-    transform: translate(3px, -3px);
+    letter-spacing: 1px;
+    transform: translateX(32px);
   }
 
-  to {
-    transform: translate(0);
+  90% {
+    letter-spacing: 2px;
+    transform: translateX(0px);
+  }
+
+  100% {
+    letter-spacing: 1px;
+    transform: translateX(0px);
   }
 }
 
-@keyframes shift {
-  0%, 40%, 44%, 58%, 61%, 65%, 69%, 73%, 100% {
-    transform: skewX(0deg);
+@keyframes loading_713 {
+  0% {
+    width: 16px;
+    transform: translateX(0px);
   }
 
-  41% {
-    transform: skewX(10deg);
+  40% {
+    width: 100%;
+    transform: translateX(0px);
   }
 
-  42% {
-    transform: skewX(-10deg);
+  80% {
+    width: 16px;
+    transform: translateX(64px);
   }
 
-  59% {
-    transform: skewX(40deg) skewY(10deg);
+  90% {
+    width: 100%;
+    transform: translateX(0px);
   }
 
-  60% {
-    transform: skewX(-40deg) skewY(-10deg);
-  }
-
-  63% {
-    transform: skewX(10deg) skewY(-5deg);
-  }
-
-  70% {
-    transform: skewX(-50deg) skewY(-20deg);
-  }
-
-  71% {
-    transform: skewX(10deg) skewY(-10deg);
+  100% {
+    width: 16px;
+    transform: translateX(0px);
   }
 }
+
+@keyframes loading2_713 {
+  0% {
+    transform: translateX(0px);
+    width: 16px;
+  }
+
+  40% {
+    transform: translateX(0%);
+    width: 80%;
+  }
+
+  80% {
+    width: 100%;
+    transform: translateX(0px);
+  }
+
+  90% {
+    width: 80%;
+    transform: translateX(15px);
+  }
+
+  100% {
+    transform: translateX(0px);
+    width: 16px;
+  }
+}
+ 
+ 
+
